@@ -12,9 +12,9 @@
 <% @event.selections.each do |selection| %>
   <tr>
     <td><%= selection.movie.name %></td>
-    <td></td>
+    <td> <%= ratings_for selection, :dimension => :preference, :force_static => true%></td>
     
-    <td><%= ratings_for selection, current_user %>
+    <td><%= ratings_for selection, :show_user_rating => true,  :dimension => :preference %>
       </td>
   </tr>
 <% end %>

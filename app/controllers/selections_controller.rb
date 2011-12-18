@@ -2,6 +2,6 @@ class SelectionsController < ApplicationController
   def rate
     @selection = Selection.find(params[:id])
     @selection.rate(params[:stars], current_user, params[:dimension])
-    render events_path
+    redirect_to '/events'
   end  
 end
