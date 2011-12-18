@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @event = Event.where(:active => true).first
+    @event = Event.where(:active => true).last
     
     respond_to do |format|
       format.html # index.html.erb
