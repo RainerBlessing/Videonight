@@ -17,9 +17,9 @@
     <%= f.fields_for :movies do |builder| %>
     <p>
       <%= builder.label :name %><br/> 
-      <%= builder.text_field :name %> <a href="" id="query_imdb_name"><%= t :query_imdb %></a><br/>
+      <%= builder.text_field :name %> <a href="" class="query_imdb_name"><%= t :query_imdb %></a><br/>
       <%= builder.label :imdbid %><br/>
-      <%= builder.text_field :imdbid %> <a href="" id="query_imdb_id"><%= t :query_imdb %></a>
+      <%= builder.text_field :imdbid %> <a href="" class="query_imdb_id"><%= t :query_imdb %></a>
     <% end %>
   </div>
   <div class="actions">

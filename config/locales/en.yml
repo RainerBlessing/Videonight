@@ -10,6 +10,10 @@ en:
   next_event: Next event
   please_sign_in: Please sign in to participate!
   query_imdb: Query IMDB
+  movie: Movie
+  average: Average
+  your_rating: Your Rating
+  new_event: New Event
   activerecord:
     models:
       event: Event

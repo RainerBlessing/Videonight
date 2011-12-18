@@ -5,9 +5,14 @@
 <%if @event %>
   <tr>
     <td><%= @event.start %></td>
-    <td><%= @event.active %></td>
+    <td></td>
     <td><%= @event.user.email %></td>
     <td><%= link_to 'Edit', edit_event_path(@event) %></td>
+  </tr>
+  <tr>
+    <th><%=t :movie%></th>
+    <th><%=t :average%></th>
+    <th><%=t :your_rating%></th>
   </tr>
 <% @event.selections.each do |selection| %>
   <tr>
@@ -25,7 +30,7 @@
 
 <br />
 <% if user_signed_in? %>
-<%= link_to 'New Event', new_event_path %>
+<%= link_to t(:new_event), new_event_path %>
 <% else %>
   <%= t :please_sign_in %>
 <% end %>
