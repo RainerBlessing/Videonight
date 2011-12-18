@@ -24,11 +24,11 @@ gem "html5-boilerplate"
 
 gem 'devise'
 
-gem 'high_voltage' #static pages
-
 gem 'imdb'
 
 gem 'ajaxful_rating', :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => "rails3"
+
+gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
