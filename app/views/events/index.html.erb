@@ -1,0 +1,36 @@
+<h1><%= t :next_event %></h1>
+
+<table>
+
+<%if @event %>
+  <tr>
+    <td><%= @event.start %></td>
+    <td><%= @event.active %></td>
+    <td><%= @event.user.email %></td>
+    <td><%= link_to 'Edit', edit_event_path(@event) %></td>
+  </tr>
+<% @event.selections.each do |selection| %>
+  <tr>
+    <td><%= selection.movie.name %></td>
+    <td><%= selection.average_vote %></td>
+    
+    <td><%  if current_user %>
+        <%= form_for @votes[selection.id] do |f| %>
+          <%= f.label :value %><br/>
+          <%= f.text_field :value %>
+        <% end %>
+        <% end %>
+      </td>
+  </tr>
+<% end %>
+<% else %>
+  <tr><td colspan="4"><%= t :no_event %></td></tr>
+<% end %>
+</table>
+
+<br />
+<% if user_signed_in? %>
+<%= link_to 'New Event', new_event_path %>
+<% else %>
+  <%= t :please_sign_in %>
+<% end %>

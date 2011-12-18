@@ -1,0 +1,20 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  videonight: Videonight
+  signed_in: Signed in as %{email}
+  sign_out: Sign out
+  sign_in: Sign in
+  no_event: There is no active event.
+  next_event: Next event
+  please_sign_in: Please sign in to participate!
+  query_imdb: Query IMDB
+  activerecord:
+    models:
+      event: Event
+      movie: Movie
+    attributes:
+      movie:
+        name: Name
+        imdbid: IMDB ID
