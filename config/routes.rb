@@ -3,9 +3,20 @@ Videonight::Application.routes.draw do
 
   resources :events
 
-  resources :votes
-
   devise_for :users
+
+  resources :users do
+    member do
+      post :rate
+    end
+  end
+
+  resources :selections do
+    member do
+      post :rate
+    end
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

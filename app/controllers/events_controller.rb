@@ -5,13 +5,6 @@ class EventsController < ApplicationController
   def index
     @event = Event.where(:active => true).first
     
-    @votes = {}
-    if current_user
-      @event.selections.each do |selection|
-        vote = current_user.votes.where( :selection_id => selection.id ).first|| current_user.votes.build
-        @votes[selection.id] = vote
-      end
-    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }

@@ -13,5 +13,5 @@ class User < ActiveRecord::Base
 
   has_many :movies, :through => :selections
 
-  has_many :votes
+  ajaxful_rater
 end
