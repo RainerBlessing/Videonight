@@ -7,14 +7,14 @@
   <%= link_to t(:edit), edit_event_path(@event) %>
   </p>
 <table>
-  <tr>
-  </tr>
-  <tr>
-    <th><%=t :movie%></th>
-    <th><%=t :imdb_rating %></th>
-    <th><%=t :average%></th>
-    <th><%=t :your_rating%></th>
-  </tr>
+  <thead>
+    <tr>
+      <th><%=t :movie%></th>
+      <th><%=t :imdb_rating %></th>
+      <th><%=t :average%></th>
+      <th><%=t :your_rating%></th>
+    </tr>
+  </thead>
 <% @event.selections.each do |selection| %>
   <tr>
     <td><a href="http://imdb.com/title/<%= selection.movie.imdbid %>"><%= selection.movie.name %></a></td>
