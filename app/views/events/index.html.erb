@@ -1,22 +1,24 @@
-<h1><%= t :next_event %></h1>
+<h2><%= t :next_event %> <%= l @event.start, :format => :short %></h2>
 
-<table>
 
 <%if @event %>
+  <p>
+  <%= @event.user.email %><br/>
+  <%= link_to t(:edit), edit_event_path(@event) %>
+  </p>
+<table>
   <tr>
-    <td><%= @event.start %></td>
-    <td></td>
-    <td><%= @event.user.email %></td>
-    <td><%= link_to 'Edit', edit_event_path(@event) %></td>
   </tr>
   <tr>
     <th><%=t :movie%></th>
+    <th><%=t :imdb_rating %></th>
     <th><%=t :average%></th>
     <th><%=t :your_rating%></th>
   </tr>
 <% @event.selections.each do |selection| %>
   <tr>
-    <td><%= selection.movie.name %></td>
+    <td><a href="http://imdb.com/title/<%= selection.movie.imdbid %>"><%= selection.movie.name %></a></td>
+    <td><%= Imdb::Movie.new(selection.movie.imdbid[2..-1]).rating %></td>
     <td> <%= ratings_for selection, :dimension => :preference, :force_static => true%></td>
     
     <td><%= ratings_for selection, :show_user_rating => true,  :dimension => :preference %>

@@ -119,4 +119,3 @@ module AjaxfulRating # :nodoc:
     end
   end
 end
-

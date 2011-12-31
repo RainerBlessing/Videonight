@@ -10,19 +10,22 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :start %><br />
     <%= f.datetime_select :start %>
     <%= f.fields_for :movies do |builder| %>
-    <p>
+      <div class="movie">
       <%= builder.label :name %><br/> 
-      <%= builder.text_field :name %> <a href="" class="query_imdb_name"><%= t :query_imdb %></a><br/>
+      <%= builder.text_field :name %><br/>
       <%= builder.label :imdbid %><br/>
-      <%= builder.text_field :imdbid %> <a href="" class="query_imdb_id"><%= t :query_imdb %></a>
+      <%= builder.text_field :imdbid %></br><a rel='imdb_query' class="small button nice radius"><%= t :query_imdb %></a>
+      <div style="clear:both"></div>
+      </div>
     <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
