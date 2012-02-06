@@ -1,0 +1,19 @@
+/* line 2, ../../app/assets/stylesheets/global.css.scss */
+body {
+  background-color: #eee;
+}
+
+/* line 5, ../../app/assets/stylesheets/global.css.scss */
+#user_navigation {
+  float: right;
+}
+
+/* line 8, ../../app/assets/stylesheets/global.css.scss */
+#container {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}

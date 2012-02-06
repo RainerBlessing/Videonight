@@ -1,9 +1,8 @@
-<h2><%= t :next_event %> <%= l @event.start, :format => :short %></h2>
-
-
 <%if @event %>
+  <h2><%= t :next_event %> <%= l @event.start, :format => :short %></h2>
+
   <p>
-  <%= @event.user.email %><br/>
+  <%= @event.user.login %><br/>
   <%= link_to t(:edit), edit_event_path(@event) %>
   </p>
 <table>
@@ -31,7 +30,7 @@
 </table>
 
 <br />
-<% if user_signed_in? %>
+<% if current_user %>
 <%= link_to t(:new_event), new_event_path %>
 <% else %>
   <%= t :please_sign_in %>

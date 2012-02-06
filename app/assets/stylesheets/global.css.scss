@@ -1,0 +1,10 @@
+@import "compass/css3";
+body{
+  background-color: #eee;
+}
+#user_navigation{
+  float: right;
+}
+#container{
+  @include border-radius(3px);
+}

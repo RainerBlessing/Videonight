@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  #before_filter :authenticate_user!, :except => [:show, :index]
   # GET /events
   # GET /events.json
   def index
-    @event = Event.where(:active => true).last
+    @event = Event.find(:first, :order => 'created_at desc')
     
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +44,6 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     @event.user = current_user
-    @event.active = true
 
     respond_to do |format|
       if @event.save

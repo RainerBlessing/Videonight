@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem 'rails', '3.2.0'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -8,13 +8,13 @@ gem 'rails', '3.1.3'
 gem 'pg'
 
 
-gem 'sass-rails',   '~> 3.1.5'
+gem 'sass-rails',   '~> 3.2.3'
 gem 'compass'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'coffee-rails', '~> 3.1.1'
+  gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation'
   gem "html5-boilerplate"
@@ -24,9 +24,9 @@ gem 'jquery-rails'
 
 gem "haml"
 
-gem 'devise'
-
 gem 'imdb'
+
+gem 'net-ldap'
 
 gem 'ajaxful_rating', :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => "rails3"
 
