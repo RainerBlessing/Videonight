@@ -7,6 +7,10 @@ gem 'rails', '3.2.0'
 
 gem 'pg'
 
+gem "thin", "1.3.1"
+gem "eventmachine", "1.0.0.beta.2"
+gem "rake", "0.9.2.2"
+
 
 gem 'sass-rails',   '~> 3.2.3'
 gem 'compass'
@@ -30,7 +34,6 @@ gem 'net-ldap'
 
 gem 'ajaxful_rating', :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => "rails3"
 
-gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
