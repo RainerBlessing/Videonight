@@ -5,7 +5,7 @@ $ ->
   $.expr[":"].r = (obj, index, meta, stack) ->
     $(obj).attr("rel") is meta[3]
   $('a:r(imdb_query)').click ->
-    input = $(this).parent().find('input')
+    input = $(this).parent().parent().find('input')
     input_title=$(input[0])
     input_imdb_id=$(input[1])
     movie = { title: input_title, title_value: input_title.attr('value'), imdb_id: input_imdb_id, imdb_id_value: input_imdb_id.attr('value') }
@@ -31,3 +31,15 @@ query_title = (movie) ->
 set_movie = (movie) ->
   movie.title.val(movie.title_value)
   movie.imdb_id.val(movie.imdb_id_value)
+
+remove_fields = (link) ->
+  $(link).prev("input[type=hidden]").val "1"
+  $(link).closest(".fields").hide()
+
+add_fields = (link, association, content) ->
+  new_id = new Date().getTime()
+  regexp = new RegExp("new_" + association, "g")
+  $(link).before content.replace(regexp, new_id)
+
+@remove_fields = remove_fields
+@add_fields = add_fields

@@ -13,7 +13,7 @@ gem "rake", "0.9.2.2"
 
 
 gem 'sass-rails',   '~> 3.2.3'
-gem 'compass'
+gem 'compass', '~> 0.12.alpha'
 
 # Gems used only for assets and not required
 # in production environments by default.

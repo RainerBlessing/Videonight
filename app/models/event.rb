@@ -4,5 +4,5 @@ class Event < ActiveRecord::Base
   has_many :movies, :through => :selections
   has_many :votes, :through => :selections
 
-  accepts_nested_attributes_for :selections, :movies, :votes
+  accepts_nested_attributes_for :selections, :movies, :votes, :allow_destroy => true
 end

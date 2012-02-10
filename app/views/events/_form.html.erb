@@ -14,14 +14,9 @@
     <%= f.label :start %><br />
     <%= f.datetime_select :start %>
     <%= f.fields_for :movies do |builder| %>
-      <div class="movie">
-      <%= builder.label :name %><br/> 
-      <%= builder.text_field :name %><br/>
-      <%= builder.label :imdbid %><br/>
-      <%= builder.text_field :imdbid %></br><a rel='imdb_query' class="small button nice radius"><%= t :query_imdb %></a>
-      <div style="clear:both"></div>
-      </div>
+      <%= render  'movie_fields', :f => builder %>
     <% end %>
+    <%= link_to_add_fields "Add Movie", f, :movies =%>
   </div>
   <div class="actions">
     <%= f.submit %>

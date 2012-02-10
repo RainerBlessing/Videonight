@@ -1,5 +1,5 @@
 /* line 8, ../../app/assets/stylesheets/events.css.scss */
-.field .movie {
+.field .fields {
   width: 28em;
   background-color: #ddd;
   margin: 1em;
@@ -12,11 +12,11 @@
   border-radius: 3px;
 }
 /* line 10, ../../app/assets/stylesheets/events.css.scss */
-.field .movie a {
+.field .fields a {
   float: right;
   margin-top: 1em;
 }
 /* line 14, ../../app/assets/stylesheets/events.css.scss */
-.field .movie input {
+.field .fields input {
   width: 99%;
 }
