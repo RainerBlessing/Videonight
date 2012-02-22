@@ -229,6 +229,7 @@ de:
         imdbid: IMDB ID
   videonight: Videoabend
   signed_in: Angemeldet als %{email}
+  signed_out: Abgemeldet
   sign_out: Abmelden
   sign_in: Anmelden
   no_event: Es gibt keinen aktuellen Termin.

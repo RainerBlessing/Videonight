@@ -15,7 +15,7 @@
           = t :signed_in, :email => current_user.login 
           = link_to t(:sign_out), log_out_path, :method => :delete
         - else
-          = link_to t(:sign_in), new_session_path
+          = link_to t(:sign_in), new_session_path unless current_page?(new_session_path)
       %div.clear
       #main{ :role => 'main' }
         = render "layouts/flashes"

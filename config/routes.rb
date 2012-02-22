@@ -6,7 +6,7 @@ Videonight::Application.routes.draw do
   resources :events
   
   get "log_in" => "sessions#new", :as => "log_in"
-  get "log_out" => "sessions#destroy", :as => "log_out"
+  delete "log_out" => "sessions#destroy", :as => "log_out"
 
   resources :users do
     member do
