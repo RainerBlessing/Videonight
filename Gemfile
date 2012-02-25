@@ -5,8 +5,6 @@ gem 'rails', '3.2.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
-
 gem "thin", "1.3.1"
 gem "eventmachine", "1.0.0.beta.2"
 gem "rake", "0.9.2.2"
