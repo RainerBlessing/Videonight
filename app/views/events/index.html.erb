@@ -2,12 +2,24 @@
   <h2><%= t :next_event %> <%= l @event.start, :format => :short %></h2>
 
   <p>
-  <%= @event.user.login %><br/>
+  <%= t(:event_creator, :creator => @event.user.login, :domain => APP_CONFIG['email_domain']).html_safe %><br/>
+  <% if @vote_count > 1 %>
+    <%= t :current_votes, :count => @vote_count %><br/>
+  <%else %>
+    <%= t :current_votes_singular, :count => @vote_count %><br/>
+  <%end%>
   <%= link_to t(:edit), edit_event_path(@event) %>
   </p>
 <table>
+<colgroup>
+      <col width="100">
+      <col width="100">
+      <col width="150">
+      <col width="150">
+    </colgroup>
+
   <thead>
-    <tr>
+        <tr>
       <th><%=t :movie%></th>
       <th><%=t :imdb_rating %></th>
       <th><%=t :average%></th>

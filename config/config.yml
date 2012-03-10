@@ -1,0 +1,12 @@
+default: &default
+  server: 10.6.2.240
+  port: 389
+  base: DC=intershopnet
+  domain: intershopnet
+  email_domain: intershop.de
+development:
+  <<: *default
+test:
+  <<: *default
+production:
+  <<: *default

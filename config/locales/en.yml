@@ -22,3 +22,6 @@ en:
       movie:
         name: Name
         imdbid: IMDB ID
+  event_creator: Termin erstellt von %{creator}
+  current_votes: %{count} persons already voted.
+  current_votes_singular: %{count} person already voted.

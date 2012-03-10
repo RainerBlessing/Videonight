@@ -1,10 +1,11 @@
 class EventsController < ApplicationController
-  #before_filter :authenticate_user!, :except => [:show, :index]
-  # GET /events
-  # GET /events.json
+    #before_filter :authenticate_user!, :except => [:show, :index]
+    # GET /events
+    # GET /events.json
   def index
     @event = Event.find(:first, :order => 'created_at desc')
-    
+    @vote_count = @event.selections.first.raters(:preference).size
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
