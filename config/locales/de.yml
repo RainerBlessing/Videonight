@@ -244,3 +244,6 @@ de:
   edit: Bearbeiten
   show: Anzeigen
   back: Zurueck
+  event_creator: Termin erstellt von <a href="mailto:%{creator}@%{domain}">%{creator}</a>
+  current_votes: %{count} Personen haben schon abgestimmt.
+  current_votes_singular: %{count} Person hat schon abgestimmt.
