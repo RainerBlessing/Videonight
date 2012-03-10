@@ -8,4 +8,4 @@ This webapp helps you organizing a videonight with friends.
 - Choose the best voted movie to watch
 
 Authentication only works with an LDAP/AD server. The server connection
-settings are defined in config/config.tml .
+settings are defined in config/config.yml .
