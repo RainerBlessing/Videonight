@@ -4,7 +4,8 @@ class EventsController < ApplicationController
     # GET /events.json
   def index
     @event = Event.find(:first, :order => 'created_at desc')
-    @vote_count = @event.selections.first.raters(:preference).size
+    
+    @event && @vote_count = @event.selections.first.raters(:preference).size
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,7 +46,9 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     @event.user = current_user
-
+    @event.movies.each do |movie|
+      movie.imdb_rating = Imdb::Movie.new(movie.imdbid[2..-1]).rating
+    end
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -64,7 +67,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to events_path, notice: 'Event was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
