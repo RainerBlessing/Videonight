@@ -1,0 +1,12 @@
+default: &default
+  server: <ad server address>
+  port: 389
+  base: DC=<domainname>
+  domain: <domainname>
+  email_domain: <domain email>
+development:
+  <<: *default
+test:
+  <<: *default
+production:
+  <<: *default
