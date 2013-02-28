@@ -10,17 +10,17 @@ gem "eventmachine", "1.0.0.beta.2"
 gem "rake", "0.9.2.2"
 
 
-gem 'sass-rails',   '~> 3.2.3'
-gem 'compass', '~> 0.12.alpha'
 
 gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem "compass-rails"
+  gem 'zurb-foundation', '~> 3.2.5'
   gem 'uglifier', '>= 1.0.3'
-  gem 'zurb-foundation'
   gem "html5-boilerplate"
 end
 
@@ -45,11 +45,11 @@ group :development do
 end
 
 group :test, :development do
-  gem 'mocha'
   gem 'sqlite3'
 end
 
 group :test do
+  gem 'mocha'
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
   gem 'cucumber-rails'

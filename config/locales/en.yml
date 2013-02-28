@@ -23,5 +23,5 @@ en:
         name: Name
         imdbid: IMDB ID
   event_creator: Event created by <a href="mailto:%{creator}@%{domain}">%{creator}</a>
-  current_votes: %{count} persons already voted.
-  current_votes_singular: %{count} person already voted.
+  current_votes: "%{count} persons already voted."
+  current_votes_singular: "%{count} person already voted."

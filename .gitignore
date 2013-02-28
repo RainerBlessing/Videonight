@@ -23,3 +23,5 @@
 #rename config/config.yml.sample to config.yml and configure
 #your user handling
 /config/config.yml
+
+/public/assets
