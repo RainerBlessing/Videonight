@@ -16,3 +16,10 @@
 
 #Capistrano
 /config/deploy.rb
+
+#vi
+*.swp
+
+#rename config/config.yml.sample to config.yml and configure
+#your user handling
+/config/config.yml

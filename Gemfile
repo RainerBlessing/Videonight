@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.0'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -30,7 +30,9 @@ gem "haml"
 
 gem 'imdb'
 
-gem 'net-ldap'
+group :production do
+  gem 'net-ldap'
+end
 
 gem 'ajaxful_rating', :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => "rails3"
 
