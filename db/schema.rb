@@ -56,9 +56,11 @@ ActiveRecord::Schema.define(:version => 20120324162438) do
   add_index "selections", ["user_id"], :name => "index_selections_on_user_id"
 
   create_table "users", :force => true do |t|
-    t.string   "login",      :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "login",         :null => false
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

@@ -10,24 +10,26 @@ class User < ActiveRecord::Base
 
   ajaxful_rater
 
-  def self.authenticate(login, password)
-   return false if login.empty? or password.empty?
- 
-    conn = Net::LDAP.new :host => APP_CONFIG['server'],
-                         :port => APP_CONFIG['port'],
-                         :base => APP_CONFIG['base'],
-                         :auth => { :username => "#{login}@#{APP_CONFIG['domain']}",
-                                    :password => password,
-                                    :method => :simple }
-    if conn.bind
-      return self.new(:login => login)
-    else
-      return nil
-    end
+  validates_presence_of :login
+  validates_uniqueness_of :login
 
-  # If we don't rescue this, Net::LDAP is decidedly ungraceful about failing
-  # to connect to the server. We'd prefer to say authentication failed.
-  rescue Net::LDAP::LdapError => e
-    return false
+  attr_accessor :password
+  before_save :encrypt_password
+
+  def self.authenticate(login, password)
+    user = find_by_login(login)
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+      user
+    else
+      nil
+    end
   end
+  
+  def encrypt_password
+    if password.present?
+      self.password_salt = BCrypt::Engine.generate_salt
+      self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
+    end
+  end
+
 end

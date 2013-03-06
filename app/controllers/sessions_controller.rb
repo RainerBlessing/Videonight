@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
   def create
-    authorized = User.authenticate(params[:login], params[:password])
+    authorized = Authenticator.authenticate(params[:login], params[:password])
     if authorized
       user = User.where(:login => params[:login]).first_or_create(:login => params[:login])
       session[:user_id] = user.id

@@ -9,6 +9,7 @@ gem "thin", "1.3.1"
 gem "eventmachine", "1.0.0.beta.2"
 gem "rake", "0.9.2.2"
 
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 
 gem 'sqlite3'
@@ -42,6 +43,8 @@ gem 'ajaxful_rating', :git => 'git://github.com/edgarjs/ajaxful-rating.git', :br
 
 group :development do
   gem 'nifty-generators'
+  gem "ZenTest", "~> 4.4.2"
+  gem "autotest-rails", "~> 4.1.0"
 end
 
 group :test, :development do
@@ -51,9 +54,10 @@ end
 group :test do
   gem 'mocha'
   # Pretty printed test output
-  gem 'turn', '0.8.2', :require => false
-  gem 'cucumber-rails'
+  gem 'turn', '0.8.3', :require => false
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'rspec-rails'
 end
 
 gem 'capistrano'
