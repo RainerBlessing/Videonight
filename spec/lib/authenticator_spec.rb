@@ -1,12 +1,17 @@
 require 'spec_helper'
-require 'authenticator'
-require 'one_user_authenticator'
-require 'ldap_authenticator'
-require 'local_authenticator'
+#lib files are included in initializers/01_authenticator.rb
 
 describe OneUserAuthenticator do
+  before(:all) do
+    @originalAuthenticator = Authenticator.authenticator
+  end
+  
+  after(:all) do
+    Authenticator.authenticator= @originalAuthenticator
+  end
+
   it "can authenticate a user" do    
-    Authenticator.setAuthenticator(OneUserAuthenticator)
+    Authenticator.authenticator=OneUserAuthenticator
     login = 'login'
 
     password = 'password'
@@ -21,7 +26,7 @@ end
 
 describe LdapAuthenticator do
   it "can authenticate a user" do    
-    Authenticator.setAuthenticator(LdapAuthenticator)
+    Authenticator.authenticator=LdapAuthenticator
 
     login = 'login'
 
@@ -41,7 +46,7 @@ end
 
 describe LocalAuthenticator do
   it "can authenticate a user" do    
-    Authenticator.setAuthenticator(LocalAuthenticator)
+    Authenticator.authenticator=LocalAuthenticator
     login = 'login'
     password = 'password'
 
@@ -58,5 +63,3 @@ describe LocalAuthenticator do
     result.should be_false
   end
 end
-
-

@@ -1,6 +1,9 @@
 class Authenticator
-  def self.setAuthenticator(realAuthenticator)
+  def self.authenticator=(realAuthenticator)
     @RealAuthenticator = realAuthenticator
+  end
+  def self.authenticator
+    @RealAuthenticator
   end
   def self.authenticate(login, password)
     return @RealAuthenticator.authenticate(login, password)

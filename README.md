@@ -7,5 +7,5 @@ This webapp helps you organizing a videonight with friends.
 - Let the viewers vote on the movies
 - Choose the best voted movie to watch
 
-Authentication only works with an LDAP/AD server. The server connection
-settings are defined in config/config.yml .
+Authentication is configurable (fixed user, local authentication, ldap). 
+The configuration is defined in config/config.yml. Rename config/config.yml.sample to config/config.yml and edit the file.
