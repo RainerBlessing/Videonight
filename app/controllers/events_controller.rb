@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   def index
     @event = Event.find(:first, :order => 'created_at desc')
     
-    @event && @vote_count = @event.selections.first.raters(:preference).size
+    #@event && @vote_count = @event.selections.first.raters(:preference).size
 
     respond_to do |format|
       format.html # index.html.erb

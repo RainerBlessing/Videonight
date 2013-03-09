@@ -14,17 +14,20 @@ $ ->
     else if movie.title_value.length > 0
       query_title(movie)
     return false
-
+  $('.movie').each ->
+    id = $(this).attr('id')
+    $.getJSON "http://www.imdbapi.com/?i=" + id + "&callback=?", (data) =>
+      $(this).find('.imdb_rating').text data.imdbRating
 query_id = (movie) ->
   @movie = movie
   $.getJSON "http://www.imdbapi.com/?i=" + @movie.imdb_id_value + "&callback=?", (data) =>
-    @movie.imdb_id_value = data.ID
+    @movie.imdb_id_value = data.imdbID
     @movie.title_value = data.Title
     set_movie(@movie)
 query_title = (movie) ->
   @movie = movie
   $.getJSON "http://www.imdbapi.com/?t=" + @movie.title_value + "&callback=?", (data) =>
-    @movie.imdb_id_value = data.ID
+    @movie.imdb_id_value = data.imdbID
     @movie.title_value = data.Title
     set_movie(@movie)
 
