@@ -4,11 +4,11 @@
 $ ->
   $.expr[":"].r = (obj, index, meta, stack) ->
     $(obj).attr("rel") is meta[3]
-  $('a:r(imdb_query)').click ->
+  $('div').on 'click','a:r(imdb_query)', -> 
     input = $(this).parent().parent().find('input')
     input_title=$(input[0])
     input_imdb_id=$(input[1])
-    movie = { title: input_title, title_value: input_title.attr('value'), imdb_id: input_imdb_id, imdb_id_value: input_imdb_id.attr('value') }
+    movie = { title: input_title, title_value: input_title.val(), imdb_id: input_imdb_id, imdb_id_value: input_imdb_id.val() }
     if movie.imdb_id_value.length > 0
       query_id(movie)
     else if movie.title_value.length > 0
