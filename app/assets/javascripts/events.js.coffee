@@ -36,7 +36,7 @@ set_movie = (movie) ->
   movie.imdb_id.val(movie.imdb_id_value)
 
 remove_fields = (link) ->
-  $(link).prev("input[type=hidden]").val "1"
+  $(link).prev("input[type=hidden]").val "true"
   $(link).closest(".fields").hide()
 
 add_fields = (link, association, content) ->
