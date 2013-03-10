@@ -1,5 +1,3 @@
-require 'net/ldap'
-
 class LocalAuthenticator
   def self.authenticate(login, password)
     User.authenticate login, password
