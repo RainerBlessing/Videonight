@@ -4,7 +4,7 @@ default: &default
   base: DC=<domainname>
   domain: <domainname>
   email_domain: <domain email>
-  authenticatior: <ldap|local|one_user>
+  authenticator: <ldap|local|one_user>
 development:
   <<: *default
 test:
