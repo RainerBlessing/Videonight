@@ -48,7 +48,8 @@ group :development do
 end
 
 group :test, :development do
-  gem 'sqlite3'
+  #gem 'sqlite3'
+  gem 'pg' #heroku
 end
 
 group :test do
